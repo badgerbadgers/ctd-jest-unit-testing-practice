@@ -1,5 +1,6 @@
 const utils = require('./index.js');
 
+//test function fahrenheitToCelsius
 describe('Test fahrenheit to celsius conversion', () => {
     test('32 degrees fahrenheit should be 0 degrees celsius', () => {
         expect(utils.fahrenheitToCelsius(32)).toBe(0);
@@ -9,7 +10,7 @@ describe('Test fahrenheit to celsius conversion', () => {
     });
 });
 
-
+//test function celsiusToFahrenheit
 describe('Test celsius to fahrenheit conversion', () => {
     test('100 degrees celsius should be 0 degrees fahrenheit', () => {
         expect(utils.celsiusToFahrenheit(100)).toBe(212);
@@ -19,18 +20,27 @@ describe('Test celsius to fahrenheit conversion', () => {
     });
 });
 
+//test function celsiusToFahrenheit
+//there are four tests for this function 
+//the first test returns the first item in test array is a string
+//the second returns null if there are no values in test array
+//the third test returns null if there are no strings in test array which contains integers
+//the fourth test returns the second item in an array if the item is a string
 describe('Test getting the first string from an array', () => {
     test('Returns the first item if it is a string', () => {
         const testList = ['hello', 'world'];
         expect(utils.getFirstStringFromArray(testList)).toBe('hello');
     });
     test('Returns null for an empty array', () => {
-        // Write your test code here
+        const testEmptyArray = [];
+        expect(utils.getFirstStringFromArray(testEmptyArray)).toBe(null);
     });
     test('Returns null if no strings are in the array', () => {
-        // Write your test code here
+        const testString = [1,2,3];
+        expect(utils.getFirstStringFromArray(testString)).toBe(null);
     });
     test('Returns the second item if the first item is a number', () => {
-        // Write your test code here
+        const testFirstItemTypeOfNumber = [1, 'tim'];
+        expect(utils.getFirstStringFromArray(testFirstItemTypeOfNumber)).toBe('tim');
     });
 });
